@@ -11,10 +11,9 @@ import javafx.scene.media.MediaPlayer;
 
 public class Time {
 
-     static Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
 
     private static MediaPlayer mediaPlayer;
-
 
     public static void digitar() {
 
@@ -43,7 +42,8 @@ public class Time {
         int segundos = Integer.parseInt(inputSegundos);
 
         if (horas < 0 || horas >= 24 || minutos < 0 || minutos >= 60 || segundos < 0 || segundos >= 60) {
-            System.out.println("Entrada inválida. Certifique-se de digitar valores válidos para horas, minutos e segundos.");
+            System.out.println(
+                    "Entrada inválida. Certifique-se de digitar valores válidos para horas, minutos e segundos.");
         } else {
             iniciarTemporizador(horas, minutos, segundos);
             stopAlertSound();
@@ -52,7 +52,7 @@ public class Time {
     }
 
     public static void iniciarTemporizador(int horas, int minutos, int segundos) {
-        final int[] contagem = {horas * 3600 + minutos * 60 + segundos};
+        final int[] contagem = { horas * 3600 + minutos * 60 + segundos };
 
         Timer timer = new Timer();
         TimerTask tarefa = new TimerTask() {
@@ -65,7 +65,6 @@ public class Time {
 
                     System.out.printf("\rTempo restante: %02d:%02d:%02d", horas, minutos, segundos);
                     contagem[0]--;
-
 
                 } else {
                     System.out.println("Temporizador finalizado!");
@@ -95,5 +94,3 @@ public class Time {
     }
 
 }
-
-
